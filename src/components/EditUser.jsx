@@ -73,7 +73,7 @@ export const EditUser = () => {
               onChange={(e)=>setPhone(e.target.value)}
             />
           </div>
-          <div className="text-right px-6">
+          <div className="text-right px-6 py-2">
             <button
               onClick={() => navigate("/Contact-Users-List/users")}
               className="rounded-lg bg-black mx-2 font-semibold text-white px-6 py-2"
