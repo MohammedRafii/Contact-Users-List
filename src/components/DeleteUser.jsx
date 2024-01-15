@@ -7,7 +7,7 @@ export const DeleteUser = () => {
   const navigate = useNavigate();
   const ref = useRef();
 
-  useClickOutSide(ref, () => navigate("/users"));
+  useClickOutSide(ref, () => navigate("/Contact-Users-List/users"));
   return (
     <div className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[12px]">
       <div
@@ -17,7 +17,7 @@ export const DeleteUser = () => {
         <Form method="POST" className="flex flex-col bg-blue-100 p-3 rounded-md gap-6" >
           <p className="text-2xl mx-auto" >Are You Sure ?</p>
           <div className="flex justify-evenly w-[70%] mx-auto mt-3 text-xl">
-            <Link to='/users' className="px-4 py-2 border active:bg-black/20 active:text-white border-black" autoFocus>Cancel</Link>
+            <Link to='/Contact-Users-List/users' className="px-4 py-2 border active:bg-black/20 active:text-white border-black" autoFocus>Cancel</Link>
             <button  className="px-4 py-2 border border-red-500 active:bg-red-400 active:text-white text-red-600" type="submit">Delete</button>
           </div>
         </Form>

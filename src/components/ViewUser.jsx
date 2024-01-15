@@ -12,7 +12,7 @@ export const ViewUser = () => {
   const ref = useRef();
   const debounceImg = useDebounce(name,300)
 
-  useClickOutSide(ref, () => navigate("/users"));
+  useClickOutSide(ref, () => navigate("/Contact-Users-List/users"));
   return (
     <div className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[10px]">
       <div
@@ -56,7 +56,7 @@ export const ViewUser = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 justify-evenly pt-6 w-[50%] mx-auto">
-              <Link className="border px-4 py-2 border-black active:bg-black/20" to='/users'>
+              <Link className="border px-4 py-2 border-black active:bg-black/20" to='/Contact-Users-List/users'>
                 Close
               </Link>
               <Link to={`/users/${_id}/delete`} className="bg-red-500 active:bg-red-600 px-4 py-2 ml-2 border border-red-500 text-white">

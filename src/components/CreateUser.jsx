@@ -11,7 +11,7 @@ export const CreateUser = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  useClickOutSide(ref,()=>navigate('/users'))
+  useClickOutSide(ref,()=>navigate('/Contact-Users-List/users'))
 
   const debounce = useDebounce(name,300)
 
@@ -63,7 +63,7 @@ export const CreateUser = () => {
           </div>
           <div className="text-right px-6">
             <button
-              onClick={() => navigate('/users')}
+              onClick={() => navigate('/Contact-Users-List/users')}
               className="rounded-lg bg-black mx-2 font-semibold text-white px-6 py-2"
             >
               Cancel

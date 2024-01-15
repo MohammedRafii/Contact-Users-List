@@ -4,6 +4,7 @@ import {LiaEdit} from "react-icons/lia"
 import {IoArrowBack, IoTrashOutline} from "react-icons/io5"
 import { IoMdPersonAdd } from "react-icons/io";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import GitHubLogo from '../assets/github.png'
 
 export const Users = () => {
   const users = useLoaderData();
@@ -15,7 +16,7 @@ export const Users = () => {
         title="My_Portfolio"
         className="fixed bottom-[14rem] right-2 z-10 p-3 lg:right-16 sm:right-2 duration-300 bg-gradient-to-br from-gray-800 to-gray-800 shadow-lg rounded-full text-white  font-bold text-4xl"
       >
-        <img src="/github.png" className="w-10" alt="github logo" />
+        <img src={GitHubLogo} className="w-10" alt="github logo" />
       </a>
       <Link
         to="create"
@@ -24,7 +25,7 @@ export const Users = () => {
         <IoMdPersonAdd />
       </Link>
       <Link
-        to="/"
+        to="Contact-Users-List/"
         className="fixed bottom-16 right-2 z-10 p-3 lg:right-16 sm:right-2 backdrop-blur-[10px] bg-gradient-to-r from-[rgba(179,151,151,0.3)] to-[rgba(134,115,134,0.5)] duration-300  shadow-lg rounded-full text-white  font-bold text-4xl"
       >
         <IoArrowBack />

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import MyLogo from '../assets/MyLogo.svg'
 
 export const Home = () => {
   return (
     <div className="flex flex-col  backdrop-blur bg-gradient-to-t from-[rgba(20,42,94,0.8)] to-[rgba(28,35,227,0.7)] text-white justify-center items-center h-screen w-full">
-        <img src="/MyLogo.svg" />
+        <img src={MyLogo} />
         <h1 className="text-2xl my-8 sm:text-4xl md:text-5xl underline underline-offset-4 italic lg:text-6xl xl:text-7xl text-[#91ffc2e8]">Mohammed Rafi's Project</h1>
         <p className="lg:text-5xl sm:text-xl md:text-4xl my-8">
           <span className="text-green-300 tracking-wider p-2"><span className="underline underline-offset-4 text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">C</span>reate</span>

@@ -13,7 +13,7 @@ export const EditUser = () => {
   const debounceImg = useDebounce(name,300)
   const ref = useRef();
 
-  useClickOutSide(ref, () => navigate("/users"));
+  useClickOutSide(ref, () => navigate("/Contact-Users-List/users"));
   return (
     <div className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[12px]">
       <div
@@ -75,7 +75,7 @@ export const EditUser = () => {
           </div>
           <div className="text-right px-6">
             <button
-              onClick={() => navigate("/users")}
+              onClick={() => navigate("/Contact-Users-List/users")}
               className="rounded-lg bg-black mx-2 font-semibold text-white px-6 py-2"
             >
               Cancel
