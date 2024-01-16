@@ -13,7 +13,7 @@ export const EditUser = () => {
   const debounceImg = useDebounce(name,300)
   const ref = useRef();
 
-  useClickOutSide(ref, () => navigate("/users"));
+  useClickOutSide(ref, () => navigate(".."));
   return (
     <div className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[12px]">
       <div

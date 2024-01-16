@@ -4,19 +4,19 @@ import {LiaEdit} from "react-icons/lia"
 import {IoArrowBack, IoTrashOutline} from "react-icons/io5"
 import { IoMdPersonAdd } from "react-icons/io";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
-import GitHubLogo from '../assets/github.png'
+import MyLogo from '../assets/MyLogo.svg'
 
 export const Users = () => {
   const users = useLoaderData();
   return (
     <div className="min-h-screen w-full bg-gradient-to-r from-sky-500 to-indigo-500">
       <a
-        href="/"
+        href="https://mohammedrafi.vercel.app"
         target="_blank"
         title="My_Portfolio"
-        className="fixed bottom-[14rem] right-2 z-10 p-3 lg:right-16 sm:right-2 duration-300 bg-gradient-to-br from-gray-800 to-gray-800 shadow-lg rounded-full text-white  font-bold text-4xl"
+        className="fixed bottom-[14rem] right-2 z-10 p-3 lg:right-16 sm:right-2 duration-300 bg-gradient-to-br from-gray-900 to-gray-900 shadow-lg rounded-full text-white  font-bold text-4xl"
       >
-        <img src={GitHubLogo} className="w-10" alt="github logo" />
+        <img src={MyLogo} className="w-10 h-10" alt="github logo" />
       </a>
       <Link
         to="create"
