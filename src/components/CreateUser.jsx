@@ -11,21 +11,6 @@ export const CreateUser = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-<<<<<<< HEAD
-  useClickOutSide(ref,()=>navigate('/Contact-Users-List/users'))
-
-  const debounce = useDebounce(name,300)
-
-  return (
-    <div className="fixed flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[10px] bg-gradient-to-r from-[rgba(255,255,255,0)] to-[rgba(255,255,255,0.1)]">
-      <div ref={ref} className="relative bg-green-100 rounded-xl p-4 w-full max-w-xl">
-        <div className="px-4 pt-4">
-          <h3 className="text-2xl border-b-2 border-gray-500">Creating User</h3>
-        </div>
-        <div className="flex flex-col items-center mt-6 justify-center  h-[100px]">
-          <img src={debounce} alt="Avatar" className="w-[150px] my-2 rounded-full" />
-        </div>
-=======
   useClickOutSide(ref,()=>navigate('/users'))
 
   const debounceImg = useDebounce(name,300)
@@ -44,7 +29,6 @@ export const CreateUser = () => {
               className="mb-3 h-[170px] my-2 rounded-full"
             />
           </div>
->>>>>>> bdb41e6 (updated)
         <Form method="post" encType="multipart/form-data" className="h-[50vh] flex px-4 flex-col justify-evenly">
           <div className="flex p-6">
             <label htmlFor="name">Name: </label>
@@ -84,11 +68,7 @@ export const CreateUser = () => {
           </div>
           <div className="text-right px-6">
             <button
-<<<<<<< HEAD
-              onClick={() => navigate('/Contact-Users-List/users')}
-=======
               onClick={() => navigate('/users')}
->>>>>>> bdb41e6 (updated)
               className="rounded-lg bg-black mx-2 font-semibold text-white px-6 py-2"
             >
               Cancel
@@ -98,10 +78,7 @@ export const CreateUser = () => {
             </button>
           </div>
         </Form>
-<<<<<<< HEAD
-=======
         </div>
->>>>>>> bdb41e6 (updated)
       </div>
     </div>
   );
