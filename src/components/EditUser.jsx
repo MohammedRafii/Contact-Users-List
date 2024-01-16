@@ -13,22 +13,14 @@ export const EditUser = () => {
   const debounceImg = useDebounce(name,300)
   const ref = useRef();
 
-<<<<<<< HEAD
-  useClickOutSide(ref, () => navigate("/Contact-Users-List/users"));
-=======
   useClickOutSide(ref, () => navigate("/users"));
->>>>>>> bdb41e6 (updated)
   return (
     <div className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[12px]">
       <div
         ref={ref}
         className="relative rounded-xl p-4 w-full backdrop-blur-xl bg-gradient-to-br from-[rgba(43,45,45,0.5)] to-[rgba(58,246,227,0.5)] max-w-xl"
       >
-<<<<<<< HEAD
-        <div className="flex flex-col bg-blue-100 justify-around h-[77vh]">
-=======
         <div className="flex flex-col bg-blue-100 justify-around h-[80vh]">
->>>>>>> bdb41e6 (updated)
         <section>
           <div className="px-4 pt-4 pb-3">
             <h3 className="text-2xl border-b-2 border-gray-500">
@@ -43,12 +35,7 @@ export const EditUser = () => {
             />
           </div>
           </section>
-        
-<<<<<<< HEAD
-        <Form method="POST" className="flex  flex-col">
-=======
         <Form method="POST" className="flex py-3 flex-col">
->>>>>>> bdb41e6 (updated)
           <div className="flex p-6">
             <label className="text-xl" htmlFor="name">Name: </label>
             <input
@@ -85,15 +72,9 @@ export const EditUser = () => {
               onChange={(e)=>setPhone(e.target.value)}
             />
           </div>
-<<<<<<< HEAD
-          <div className="text-right px-6 py-6">
-            <button
-              onClick={() => navigate("/Contact-Users-List/users")}
-=======
           <div className="text-right px-6">
             <button
               onClick={() => navigate("/users")}
->>>>>>> bdb41e6 (updated)
               className="rounded-lg bg-black mx-2 font-semibold text-white px-6 py-2"
             >
               Cancel

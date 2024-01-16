@@ -13,11 +13,7 @@ export const Home = () => {
           <span className="text-yellow-300 tracking-wider p-2"><span className="underline underline-offset-4 text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">D</span>elete</span>
         </p>
         <Link to="users">
-<<<<<<< HEAD
-          <button className="sm:text-xl md:text-2xl lg:text-3xl bg-gradient-to-tr from-[#37ead8b6] to-[#6284e37d] font-semibold active:from-[#37ead8e3] active:to-[#6284e3c2] text-white mt-6 px-6 py-4  rounded-md">Go Inside</button>
-=======
           <button className="sm:text-xl md:text-2xl lg:text-3xl bg-gradient-to-tr from-[#37ead8b6] to-[#6284e37d] font-semibold active:from-[#37ead8e3] active:to-[#6284e3c2] text-white mt-6 px-6 py-4  rounded-md">Click Here</button>
->>>>>>> bdb41e6 (updated)
         </Link>
     </div>
   );
