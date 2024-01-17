@@ -37,7 +37,7 @@ export const Users = () => {
           className="shadow-lg backdrop-blur-xl bg-green-100  text-black p-3 rounded-md w-[300px] mt-3 h-[400px] flex flex-col justify-around justify-self-center"
         >
           <figcaption className="flex border-b border-black justify-between px-3 items-center">
-            <h2 className="text-2xl italic uppercase w-[80%]">{name.slice(0,10)}...</h2>
+            <h2 className="text-2xl italic uppercase w-[80%]">{name.slice(0,10)}{(name.length>10) ?"...":""}</h2>
             <Link to={`${_id}/view`} className="cursor-pointer"><FaStreetView size={23}/></Link>
           </figcaption>
           <div className="flex justify-center items-center ">
@@ -45,7 +45,7 @@ export const Users = () => {
           </div>
           <figcaption className="border-t border-black px-3 flex justify-between ">
             <div>
-              <p className="font-medium">{email.slice(0,15)}...</p>
+              <p className="font-medium">{email.slice(0,15)}{(email.length>15) ?"...":""}</p>
               <p className="text-gray-700">{phone}</p>
             </div>
             <div className="flex items-center gap-3">
