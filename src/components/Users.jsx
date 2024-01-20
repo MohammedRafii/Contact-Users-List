@@ -5,9 +5,16 @@ import {IoArrowBack, IoTrashOutline} from "react-icons/io5"
 import { IoMdPersonAdd } from "react-icons/io";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 import MyLogo from '../assets/MyLogo.svg'
+import { useState } from "react";
 
 export const Users = () => {
   const users = useLoaderData();
+  const [page, setPage] = useState(1)
+  const selectPageHandler = (selectedPage)=>{
+    if(selectedPage >= 1 && selectedPage <= Math.ceil(users.length / 7) && selectedPage !== page){
+      setPage(selectedPage)
+    }
+  }
   return (
     <div className="min-h-screen w-full bg-gradient-to-r from-sky-500 to-indigo-500">
       <a
@@ -30,18 +37,19 @@ export const Users = () => {
       >
         <IoArrowBack />
       </Link>
-      <main className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-screen-md md:max-w-screen-sm xl:max-w-screen-lg sm:max-w-screen-sm gap-6 mx-auto">
-        {users.map(({_id,name,email,phone})=>(
+      <main className="grid justify-center  max-w-[80%]  
+      grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 mx-auto">
+        {users.slice(page * 7 - 7,page * 7).map(({_id,name,email,phone})=>(
         <figure
           key={_id}
-          className="shadow-lg backdrop-blur-xl bg-green-100  text-black p-3 rounded-md w-[300px] mt-3 h-[400px] flex flex-col justify-around justify-self-center"
+          className="shadow-lg backdrop-blur-xl bg-green-100  text-black p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[400px] h-[300px] flex flex-col justify-around  justify-self-center"
         >
           <figcaption className="flex border-b border-black justify-between px-3 items-center">
             <h2 className="text-2xl italic uppercase w-[80%]">{name.slice(0,10)}{(name.length>10) ?"...":""}</h2>
             <Link to={`${_id}/view`} className="cursor-pointer"><FaStreetView size={23}/></Link>
           </figcaption>
           <div className="flex justify-center items-center ">
-            <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${name}&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf,transparent&backgroundType=solid,gradientLinear&accessories=kurt,prescription01,prescription02,round,sunglasses,wayfarers&accessoriesColor=5199e4,65c9ff,929598,a7ffc4,b1e2ff,e6e6e6,ff488e,ff5c5c,ffafb9,ffdeb5,ffffb1,ffffff&clothingGraphic=bat,bear,cumbia,deer,diamond,hola,resist,skullOutline,skull,pizza&eyebrows=flatNatural,frownNatural,raisedExcited,raisedExcitedNatural&eyes=happy,default,surprised,winkWacky&hairColor=2c1b18,4a312c,724133,a55728,b58143,d6b370,f59797&mouth=serious,smile,twinkle,default&skinColor=ae5d29,d08b5b,edb98a,f8d25c,fd9841&top=dreads01,shaggy,shortCurly,shortFlat,shortRound,shortWaved,theCaesar,theCaesarAndSidePart,winterHat03,winterHat04,winterHat1`} alt="Avatar" className="w-[200px] border border-black rounded-full " />
+            <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${name}&backgroundColor=65c9ff,b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf,transparent&backgroundType=solid,gradientLinear&accessories=kurt,prescription01,prescription02,round,sunglasses,wayfarers&accessoriesColor=5199e4,65c9ff,929598,a7ffc4,b1e2ff,e6e6e6,ff488e,ff5c5c,ffafb9,ffdeb5,ffffb1,ffffff&clothingGraphic=bat,bear,cumbia,deer,diamond,hola,resist,skullOutline,skull,pizza&eyebrows=flatNatural,frownNatural,raisedExcited,raisedExcitedNatural&eyes=happy,default,surprised,winkWacky&hairColor=2c1b18,4a312c,724133,a55728,b58143,d6b370,f59797&mouth=serious,smile,twinkle,default&skinColor=ae5d29,d08b5b,edb98a,f8d25c,fd9841&top=dreads01,shaggy,shortCurly,shortFlat,shortRound,shortWaved,theCaesar,theCaesarAndSidePart,winterHat03,winterHat04,winterHat1`} alt="Avatar" className="sm:w-[200px] w-[150px] border border-black rounded-full " />
           </div>
           <figcaption className="border-t border-black px-3 flex justify-between ">
             <div>
@@ -55,6 +63,15 @@ export const Users = () => {
           </figcaption>
         </figure>
         ))}
+        <div className="mx-auto flex items-center text-2xl">
+          <span onClick={()=>selectPageHandler(page-1)} className={`${page > 1 ? "":"hidden"} mr-2  font-medium hover:underline active:underline`}>Prev</span>
+        <div className="flex mx-auto m-4  text-xl">
+          {[...Array(Math.ceil(users.length/7))].map((_,i)=>{
+            return <span key={i} onClick={()=>selectPageHandler(i+1)} className={`rounded-full p-2 px-4 mx-2 ${page===i+1 ? "scale-125 text-white bg-blue-800":" bg-gray-400 "}`}>{i+1}</span>
+          })}
+        </div>
+          <span onClick={()=>selectPageHandler(page+1)} className={`${page < Math.ceil(users.length/7) ? "":"hidden"} ml-2 font-medium hover:underline active:underline`}>Next</span>
+        </div>
       </main>
       <Outlet />
     </div>
