@@ -16,7 +16,7 @@ export const Users = () => {
     }
   }
   return (
-    <div className="min-h-screen w-full bg-gradient-to-r from-sky-500 to-indigo-500">
+    <div className="min-h-screen flex flex-col justify-center w-full bg-gradient-to-r from-sky-500 to-indigo-500">
       <a
         href="https://mohammedrafi.vercel.app"
         target="_blank"
@@ -63,7 +63,9 @@ export const Users = () => {
           </figcaption>
         </figure>
         ))}
-        <div className="mx-auto flex items-center text-2xl">
+      </main>
+        <div className="mx-auto flex items-center py-2 text-2xl">
+          <div className="flex items-center mx-auto">
           <span onClick={()=>selectPageHandler(page-1)} className={`${page > 1 ? "":"hidden"} mr-2  font-medium hover:underline active:underline`}>Prev</span>
         <div className="flex mx-auto m-4  text-xl">
           {[...Array(Math.ceil(users.length/7))].map((_,i)=>{
@@ -71,8 +73,8 @@ export const Users = () => {
           })}
         </div>
           <span onClick={()=>selectPageHandler(page+1)} className={`${page < Math.ceil(users.length/7) ? "":"hidden"} ml-2 font-medium hover:underline active:underline`}>Next</span>
+          </div>
         </div>
-      </main>
       <Outlet />
     </div>
   );
