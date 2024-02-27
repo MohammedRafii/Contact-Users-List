@@ -32,10 +32,10 @@ export const Header = () => {
       </div>
       <ul className='w-[45%] px-4 list-none gap-6 flex justify-evenly items-center'>
         <li className='lg:text-3xl text-xl text-white/50 font-medium'>
-          <NavLink className={({ isActive }) => (isActive ? "text-white" : "")} to={"/contacts"}>Home</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "text-white" : "")} to="/contacts">Home</NavLink>
         </li>
         <li className='lg:text-3xl text-xl text-white/50 font-medium'>
-          <NavLink className={({ isActive }) => (isActive ? "text-white" : "")} to={"/profile"}>Profile</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? "text-white" : "")} to="/profile">Profile</NavLink>
         </li>
         <li className='lg:text-3xl text-xl text-white/50 font-medium'>
           <button disabled={loading} onClick={logoutHandler}>Logout </button>
