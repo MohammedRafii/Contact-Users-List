@@ -14,7 +14,7 @@ export const Header = () => {
       toast.success(data.message)
       setIsAuthenticated(false)
       setLoading(false)
-      redirect("/login")
+      return redirect("/login")
     }
     catch (e) {
       setIsAuthenticated(true)
