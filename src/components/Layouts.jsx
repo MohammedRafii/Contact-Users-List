@@ -1,11 +1,14 @@
+import { Toaster } from "react-hot-toast";
 import { Outlet } from "react-router-dom";
 
 const Layouts = () => {
 
-  window.addEventListener('contextmenu',(e)=>e.preventDefault())
   return (
     <>
       <Outlet />
+      <div className="absolute bottom-3">
+      <Toaster/>
+      </div>
     </>
   );
 };

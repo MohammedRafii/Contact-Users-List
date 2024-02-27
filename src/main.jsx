@@ -1,34 +1,29 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import {
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
-import Layouts, { CreateUser, DeleteUser, EditUser, Home, Users, ViewUser } from "./components";
 import axios from "axios";
-import { ErrorBound } from "./components/Error/ErrorBoundry";
+import App from "./App";
 
-axios.defaults.baseURL = 'https://restapiusers.vercel.app'
+axios.defaults.baseURL = 'https://nodejs-contactusers-api.onrender.com/api/v1'
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layouts />}>
-      <Route path="" element={<Home />}/>
-      <Route path="users" element={<Users />} loader={Users.loader} ErrorBoundary={ErrorBound} >
-        <Route path="create" element={<CreateUser />} action={CreateUser.action} ErrorBoundary={ErrorBound}/>
-        <Route path=":id/view" element={<ViewUser />} loader={ViewUser.loader} ErrorBoundary={ErrorBound} />
-        <Route path=":id/edit" element={<EditUser />} loader={EditUser.loader} action={EditUser.action} ErrorBoundary={ErrorBound} />
-        <Route path=":id/delete" element={<DeleteUser />} action={DeleteUser.action} ErrorBoundary={ErrorBound}  />
-      </Route>
-    </Route>
+export const Context = createContext()
+
+const AppWrapper = () => {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [user, setUser] = useState([])
+  const [totalContacts, setTotalContacts] = useState(0)
+  window.addEventListener('contextmenu',(e)=>e.preventDefault())
+  return (
+    <Context.Provider value={{totalContacts,setTotalContacts, isAuthenticated, setIsAuthenticated, loading, setLoading, user, setUser }}>
+      <App />
+    </Context.Provider>
   )
-);
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AppWrapper />
   </React.StrictMode>
 );

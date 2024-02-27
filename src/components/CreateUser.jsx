@@ -11,7 +11,7 @@ export const CreateUser = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  useClickOutSide(ref,()=>navigate('/users'))
+  useClickOutSide(ref,()=>navigate('/contacts'))
 
   const debounceImg = useDebounce(name,300)
 
@@ -68,7 +68,7 @@ export const CreateUser = () => {
           </div>
           <div className="text-right px-6">
             <button
-              onClick={() => navigate('/users')}
+              onClick={() => navigate('/contacts')}
               className="rounded-lg bg-black mx-2 font-semibold text-white px-6 py-2"
             >
               Cancel
@@ -91,6 +91,6 @@ CreateUser.action = async({request})=>{
     email:formData.get('email'),
     phone:formData.get('phone'),
   }
-  await axios.post('/api/users',allData)
-  return redirect('/users')
+  await axios.post('/contact/add',allData,{headers:{"Content-Type":"application/json"},withCredentials:true})
+  return redirect('/contacts')
 }
