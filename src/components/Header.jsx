@@ -1,13 +1,12 @@
 import axios from 'axios'
 import { useContext } from 'react'
 import toast from 'react-hot-toast'
-import { NavLink, Navigate } from 'react-router-dom'
+import { NavLink, Navigate, redirect } from 'react-router-dom'
 import { Context } from '../main'
 
 export const Header = () => {
 
   const { isAuthenticated, setIsAuthenticated, loading, setLoading } = useContext(Context)
-  const navigate = Navigate()
   const logoutHandler = async () => {
     setLoading(true)
     try {
@@ -15,7 +14,7 @@ export const Header = () => {
       toast.success(data.message)
       setIsAuthenticated(false)
       setLoading(false)
-      navigate("/login")
+      redirect("/login")
     }
     catch (e) {
       setIsAuthenticated(true)
@@ -32,10 +31,10 @@ export const Header = () => {
       </div>
       <ul className='w-[45%] px-4 list-none gap-6 flex justify-evenly items-center'>
         <li className='lg:text-3xl text-xl text-white/50 font-medium'>
-          <NavLink className={({ isActive }) => (isActive ? "text-white" : "")} to="/contacts">Home</NavLink>
+          <NavLink className={({ isActive }) => { return isActive ? "text-white" : "" }} to="/contacts">Home</NavLink>
         </li>
         <li className='lg:text-3xl text-xl text-white/50 font-medium'>
-          <NavLink className={({ isActive }) => (isActive ? "text-white" : "")} to="/profile">Profile</NavLink>
+          <NavLink className={({ isActive }) => { return isActive ? "text-white" : "" }} to="/profile">Profile</NavLink>
         </li>
         <li className='lg:text-3xl text-xl text-white/50 font-medium'>
           <button disabled={loading} onClick={logoutHandler}>Logout </button>
