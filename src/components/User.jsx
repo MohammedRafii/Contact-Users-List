@@ -34,7 +34,7 @@ export const User = () => {
 
   useEffect(() => {
     fetchAllContacts()
-  }, [contacts])
+  }, [])
 
 
   const selectPageHandler = (selectedPage) => {
