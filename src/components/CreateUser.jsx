@@ -17,7 +17,7 @@ export const CreateUser = () => {
   const debounceImg = useDebounce(name, 300)
 
   return (
-    <div className="fixed flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[10px] bg-gradient-to-r from-[rgba(255,255,255,0)] to-[rgba(255,255,255,0.1)]">
+    <div className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 backdrop-blur-[10px] bg-gradient-to-r from-[rgba(255,255,255,0)] to-[rgba(255,255,255,0.1)]">
       <div ref={ref} className="relative bg-gradient-to-br from-[rgba(43,45,45,0.5)] to-[rgba(58,246,227,0.5)] rounded-xl p-4 w-[90%] max-w-xl">
         <div className="flex flex-col bg-blue-100 justify-around h-[60vh] sm:h-[75vh]">
           <div className="pt-2 px-2 sm:px-4 sm:pt-4">
