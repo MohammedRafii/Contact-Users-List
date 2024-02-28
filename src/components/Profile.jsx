@@ -14,7 +14,7 @@ export const Profile = () => {
     {loading ?
       <Loader />
       :
-      <div className='flex flex-col w-full sm:w-[55%] gap-6 font-medium text-2xl m-3 rounded-lg bg-slate-300 p-6'>
+      <div className='flex flex-col w-[95%] sm:w-[55%] gap-6 font-medium text-2xl mx-auto rounded-lg bg-slate-200 p-3'>
         <h1 className="text-3xl">Name   : {user?.name}</h1>
         <p className="font-mono">Email  : {user?.email}</p>
         <p className=''>Your have saved {totalContacts} {totalContacts > 1 ? "Contacts" : "Contact"}</p>
