@@ -43,13 +43,13 @@ export const ViewUser = () => {
           <figcaption className="pt-3 pb-4 w-full px-3 flex flex-col justify-between ">
             <div className="sm:text-xl text-sm w-[80%]">
               <div className="flex gap-2">
-                <label className="underline underline-offset-[8px]">
+                <label className="underline underline-offset-[2px] sm:underline-offset-[8px]">
                   Email{" "}
                 </label> <span className="ml-2">:</span>
                 <p className="font-medium text-xs sm:text-lg">{email}</p>
               </div>
               <div className="flex gap-2">
-                <label className="underline underline-offset-[8px]">
+                <label className="underline underline-offset-[2px] sm:underline-offset-[8px]">
                   Phone{" "}
                 </label> <span>:</span>
                 <p className="text-gray-700 text-xs sm:text-lg">{phone}</p>
