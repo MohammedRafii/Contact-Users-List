@@ -22,10 +22,10 @@ export const ViewUser = () => {
         <figure className="bg-blue-100 text-black p-3 rounded-md  flex flex-col justify-around">
           <figcaption className="flex  pb-2 justify-between px-3 items-center">
             <div className="flex items-center">
-              <label className="sm:text-2xl text-lg underline underline-offset-[8px]">
+              <label className="sm:text-2xl underline underline-offset-[8px]">
                 Name{" "}
               </label> <span className="text-3xl ml-1">:</span>
-              <h2 className="sm:text-2xl text-base italic mt-2 ml-3 uppercase w-[80%]">
+              <h2 className="sm:text-2xl text-sm italic mt-2 ml-3 uppercase w-[80%]">
                 {name}
               </h2>
             </div>
@@ -46,20 +46,20 @@ export const ViewUser = () => {
                 <label className="underline underline-offset-[8px]">
                   Email{" "}
                 </label> <span className="ml-2">:</span>
-                <p className="font-medium text-lg">{email}</p>
+                <p className="font-medium text-xs sm:text-lg">{email}</p>
               </div>
               <div className="flex gap-2">
                 <label className="underline underline-offset-[8px]">
                   Phone{" "}
                 </label> <span>:</span>
-                <p className="text-gray-700 text-lg">{phone}</p>
+                <p className="text-gray-700 text-xs sm:text-lg">{phone}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 justify-evenly pt-6 w-[50%] mx-auto">
+            <div className="flex items-center gap-3 justify-evenly pt-6 sm:w-[50%] mx-auto">
               <button className="border px-4 py-2 border-black active:bg-black/20" onClick={() => navigate(-1)}>
                 Close
               </button>
-              <Link to={`/contacts/${_id}/delete`} className="bg-red-500 active:bg-red-600 px-4 py-2 ml-2 border border-red-500 text-white">
+              <Link to={`/contacts/${_id}/delete`} className="bg-red-500 sm:w-[50%] active:bg-red-600 px-4 py-2 ml-2 border border-red-500 text-white">
                 Delete
               </Link>
             </div>
