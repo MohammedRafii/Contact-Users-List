@@ -14,7 +14,7 @@ export const Register = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      const response = await axios.post("/user/new", { name,email,password }, { headers: { "Content-Type": "application/json" }, withCredentials: true })
+      const response = await axios.post("/user/new", { name, email, password }, { headers: { "Content-Type": "application/json" }, withCredentials: true })
       // console.log(response)
       toast.success(response.data.message)
       setIsAuthenticated(true)
@@ -39,8 +39,8 @@ export const Register = () => {
           <input className='bg-black/15 placeholder:text-black outline-none rounded-xl shadow-md px-[1rem] py-[1.2rem] mx-6' value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" placeholder='Name' id="name" />
           <input className='bg-black/15 placeholder:text-black shadow-md outline-none rounded-xl px-[1rem] py-[1.2rem] mx-6' value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder='Email' id="email" />
           <input className='bg-black/15 placeholder:text-black shadow-md outline-none rounded-xl px-[1rem] py-[1.2rem] mx-6' value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" placeholder='Password' id="password" />
-          <button type="submit" disabled={loading} className='bg-black/45 text-xl mx-auto px-10 font-semibold w-[45%] text-[#2fff36] py-3 rounded-xl hover:scale-105 duration-200'>Sign Up</button>
-          <div className='font-medium flex items-center justify-center -m-3 w-full mx-auto '><hr className='w-[20%] border border-black/25'/> <span className='mx-3'> OR </span> <hr className='w-[20%] border border-black/25' /></div>
+          <button type="submit" disabled={loading} className='bg-black/45 sm:text-base text-sm mx-auto px-10 font-semibold w-[45%] text-[#2fff36] py-2 rounded-xl hover:scale-105 duration-200'>Sign Up</button>
+          <div className='font-medium flex items-center justify-center -m-3 w-full mx-auto '><hr className='w-[20%] border border-black/25' /> <span className='mx-3'> OR </span> <hr className='w-[20%] border border-black/25' /></div>
           <Link to={"/login"} className='border-x rounded-full border-black mx-auto px-10 font-medium py-3 w-[45%] h-[10px] flex items-center justify-center hover:scale-105 duration-200'>Login</Link>
         </form>
       </section>

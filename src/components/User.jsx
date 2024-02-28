@@ -9,12 +9,12 @@ import { useContext, useEffect, useState } from "react";
 import { Header } from "./Header"
 import { Context } from "../main";
 export const User = () => {
-  const { isAuthenticated, setTotalContacts} = useContext(Context)
+  const { isAuthenticated, setTotalContacts } = useContext(Context)
   const [contacts, setContacts] = useState([])
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
 
-  const fetchAllContacts = async()=>{
+  const fetchAllContacts = async () => {
     setLoading(true)
     try {
       const response = await axios.get("/contact/all", { withCredentials: true });
@@ -35,7 +35,7 @@ export const User = () => {
   useEffect(() => {
     fetchAllContacts()
   }, [])
-  
+
 
   const selectPageHandler = (selectedPage) => {
     if (selectedPage >= 1 && selectedPage <= Math.ceil(contacts.length / 7) && selectedPage !== page) {
@@ -71,7 +71,7 @@ export const User = () => {
       {/* {contacts?.map(({ _id, name, email, phone }) => ( */}
       <main className="grid justify-center  max-w-[80%]  
       grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 mx-auto">
-        { loading ? <div className="flex justify-center text-white/75 items-center text-5xl">Loading...</div> :(contacts?.length ? contacts?.length >= 1 && contacts?.slice(page * 7 - 7, page * 7).map(({ _id, name, email, phone }) => (
+        {loading ? <div className="flex justify-center text-white/75 items-center text-5xl">Loading...</div> : (contacts?.length ? contacts?.length >= 1 && contacts?.slice(page * 7 - 7, page * 7).map(({ _id, name, email, phone }) => (
           <figure key={_id}
             className="shadow-lg backdrop-blur-xl bg-green-100  text-black p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[300px] h-[280px] flex flex-col justify-around  justify-self-center"
           >

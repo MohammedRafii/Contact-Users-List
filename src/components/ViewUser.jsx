@@ -10,7 +10,7 @@ export const ViewUser = () => {
   const { _id, name, email, phone } = user;
   const navigate = useNavigate();
   const ref = useRef();
-  const debounceImg = useDebounce(name,300)
+  const debounceImg = useDebounce(name, 300)
 
   useClickOutSide(ref, () => navigate('/contacts'));
   return (
@@ -37,21 +37,21 @@ export const ViewUser = () => {
             <img
               src={debounceImg}
               alt="Avatar"
-              className="sm:w-[250px] w-[200px] rounded-full shadow-xl border border-black bg-gradient-to-tl to-orange-200 from-green-200 "
+              className="sm:w-[250px] w-[120px] rounded-full shadow-xl border border-black bg-gradient-to-tl to-orange-200 from-green-200 "
             />
           </div>
           <figcaption className="pt-3 pb-4 w-full px-3 flex flex-col justify-between ">
-            <div className="sm:text-xl text-lg w-[80%]">
+            <div className="sm:text-xl text-sm w-[80%]">
               <div className="flex gap-2">
                 <label className="underline underline-offset-[8px]">
-                Email{" "}
-              </label> <span className="ml-2">:</span>
+                  Email{" "}
+                </label> <span className="ml-2">:</span>
                 <p className="font-medium text-lg">{email}</p>
               </div>
               <div className="flex gap-2">
                 <label className="underline underline-offset-[8px]">
-                Phone{" "}
-              </label> <span>:</span>
+                  Phone{" "}
+                </label> <span>:</span>
                 <p className="text-gray-700 text-lg">{phone}</p>
               </div>
             </div>

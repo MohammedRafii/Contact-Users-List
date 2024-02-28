@@ -37,7 +37,7 @@ export const EditUser = () => {
             </div>
           </section>
           <Form method="POST" className="flex py-3 flex-col">
-            <div className="flex p-6">
+            <div className="flex p-3">
               <label className="text-xl" htmlFor="name">Name: </label>
               <input
                 autoFocus
@@ -50,7 +50,7 @@ export const EditUser = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="flex p-6">
+            <div className="flex px-3 py-6">
               <label className="text-xl" htmlFor="email">Email: </label>
               <input
                 type="email"
@@ -62,7 +62,7 @@ export const EditUser = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="flex p-6">
+            <div className="flex p-3">
               <label className="text-xl" htmlFor="phone">Phone: </label>
               <input
                 type="number"
@@ -104,7 +104,7 @@ EditUser.action = async ({ request, params }) => {
       email: formData.get("email"),
       phone: formData.get("phone"),
     };
-    const res = await axios.put(`/contact/${params.id}`, data,{withCredentials:true});
+    const res = await axios.put(`/contact/${params.id}`, data, { withCredentials: true });
     toast.success(res.data.message)
     return redirect("..");
   } catch (e) {
